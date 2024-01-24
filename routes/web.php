@@ -29,3 +29,7 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dasboard');
+Route::get('/instructor/dashboard', [InstructorController::class, 'AdminDashboard'])->name('instructor.dasboard');
+Route::get('/user/dashboard', [UserController::class, 'AdminDashboard'])->name('user.dasboard');
