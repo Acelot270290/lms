@@ -33,10 +33,14 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__ . '/auth.php';
 
+Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
+
 Route::middleware(['auth', 'roles:admin'])->group(function () {
+   
     Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dasboard');
     Route::get('/admin/logout', [AdminController::class, 'AdminLogout'])->name('admin.logout');
 });
+
 
 Route::middleware(['auth', 'roles:instructor'])->group(function () {
     Route::get('/instructor/dashboard', [InstructorController::class, 'InstructorDashboard'])->name('instructor.dasboard');
