@@ -52,17 +52,27 @@
 										<p class="mb-0">Please log in to your account</p>
 									</div>
 									<div class="form-body">
-                                        <form method="POST" action="{{ route('login') }}">
+                                        <form class="row g-3" method="POST" action="{{ route('login') }}">
                                             @csrf
 											<div class="col-12">
 												<label for="inputEmailAddress" class="form-label">Email</label>
-												<input type="email" id="email" name="email" class="form-control" id="inputEmailAddress" placeholder="jhon@example.com">
+												<input type="email" id="email" name="email" class="form-control @error('email') is-invalid @enderror" id="inputEmailAddress" placeholder="jhon@example.com">
+												@error('email')
+													<span class="text-danger">{{$message}}</span>
+												@enderror
 											</div>
+											
 											<div class="col-12">
 												<label for="inputChoosePassword" class="form-label">Senha</label>
 												<div class="input-group" id="show_hide_password">
-													<input type="password" id="password" name="senha" class="form-control border-end-0" id="inputChoosePassword"  placeholder="Digite sua Senha"> <a href="javascript:;" class="input-group-text bg-transparent"><i class="bx bx-hide"></i></a>
+													<input type="password" id="password" name="password" class="form-control border-end-0 @error('password') is-invalid @enderror" id="inputChoosePassword"  placeholder="Digite sua Senha">
+													<a href="javascript:;" class="input-group-text bg-transparent"><i class="bx bx-hide"></i></a>
+													@error('password')
+														<span class="text-danger">{{$message}}</span>
+													@enderror
 												</div>
+											</div>
+											
 											</div>
 											<div class="col-md-6">
 												<div class="form-check form-switch">
