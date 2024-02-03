@@ -3,6 +3,7 @@
         <div class="sidebar-header">
             <div>
                 <img src="{{asset('backend/assets/images/logo-icon.png')}}" class="logo-icon" alt="logo icon">
+                
             </div>
             <div>
                 <h4 class="logo-text">Admin</h4>
