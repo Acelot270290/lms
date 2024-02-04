@@ -6,13 +6,14 @@ use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
     public function AdminDashboard(){
         $id = Auth::user()->id;
         $profileData = User::find($id);
-        return view('admin.index', compact($profileData));
+        return view('admin.index', compact('profileData'));
     }
 
     public function AdminLogout(Request $request): RedirectResponse
@@ -35,7 +36,7 @@ class AdminController extends Controller
 
         $id = Auth::user()->id;
         $profileData = User::find($id);
-        return view('admin.admin_profile',compact('profileData'));
+        return view('admin.index', compact('profileData'));
 
     }
 
@@ -68,5 +69,42 @@ class AdminController extends Controller
         
         return redirect()->back()->with($notification);
         
+    }
+
+    public function AdminChangePassword(){
+
+        $id = Auth::user()->id;
+        $profileData = User::find($id);
+        return view('admin.admin_change_password',compact('profileData'));
+
+    }
+
+    public function AdminPasswordUpdate(Request $request){
+
+        /// Validation 
+        $request->validate([
+            'old_password' => 'required',
+            'new_password' => 'required|confirmed'
+        ]);
+
+        if (!Hash::check($request->old_password, auth::user()->password)) {
+
+            $notification = array(
+                'message' => 'Senha antiga não confere!',
+                'alert-type' => 'error'
+            );
+            return back()->with($notification);
+        }
+
+        User::whereId(auth::user()->id)->update([
+            'password' => Hash::make($request->new_password)
+        ]);
+
+        $notification = array(
+            'message' => 'Senha Atualizada com sucesso!',
+            'alert-type' => 'success'
+        );
+        return back()->with($notification); 
+
     }
 }
