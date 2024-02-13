@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Auth\LoginRequest;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -32,11 +33,20 @@ class AdminController extends Controller
 
     }
 
+    public function store(LoginRequest $request): RedirectResponse
+    {
+        $request->authenticate();
+
+        $request->session()->regenerate();
+
+        return redirect('admin.dashboard');
+    }
+
     public function AdminProfile(){
 
         $id = Auth::user()->id;
         $profileData = User::find($id);
-        return view('admin.index', compact('profileData'));
+        return view('admin.admin_profile', compact('profileData'));
 
     }
 

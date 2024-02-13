@@ -3,7 +3,6 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\InstructorController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,25 +30,23 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__ . '/auth.php';
-
-Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
+Route::get('/admin/login/', [AdminController::class, 'AdminLogin'])->name('admin.login');
 
 Route::middleware(['auth', 'roles:admin'])->group(function () {
-   
-    Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dasboard');
-    Route::get('/admin/profile', [AdminController::class, 'AdminProfile'])->name('admin.profile');
-    Route::post('/admin/profile/store', [AdminController::class, 'AdminProfileStore'])->name('admin.profile.estore');
+    Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dashboard');
+    Route::post('/admin/logout', [AdminController::class, 'AdminLogout'])->name('admin.logout');  
+    Route::get('/admin/profile', [AdminController::class, 'AdminProfile'])->name('admin.profile');  
+    Route::post('/admin/profile/store', [AdminController::class, 'AdminProfileStore'])->name('admin.profile.store');
     Route::get('/admin/change/password', [AdminController::class, 'AdminChangePassword'])->name('admin.change.password');
     Route::post('/admin/password/update', [AdminController::class, 'AdminPasswordUpdate'])->name('admin.password.update');
-    Route::get('/admin/logout', [AdminController::class, 'AdminLogout'])->name('admin.logout');
 });
-
 
 Route::middleware(['auth', 'roles:instructor'])->group(function () {
-    Route::get('/instructor/dashboard', [InstructorController::class, 'InstructorDashboard'])->name('instructor.dasboard');
-});
 
-Route::middleware(['auth', 'roles:user'])->group(function () {
-    Route::get('/user/dashboard', [UserController::class, 'UserDashboard'])->name('user.dasboard');
-});
+    Route::get('/instructor/dashboard', [InstructorController::class, 'InstructorDashboard'])->name('instructor.dashboard');
+    Route::get('/instructor/logout', [InstructorController::class, 'InstructorLogout'])->name('instructor.logout');
+}); // End Instructor Group Middleware 
+
+Route::get('/instructor/login', [InstructorController::class, 'InstructorLogin'])->name('instructor.login');
+
+require __DIR__ . '/auth.php';
