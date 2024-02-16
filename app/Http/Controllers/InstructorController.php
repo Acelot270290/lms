@@ -65,4 +65,43 @@ class InstructorController extends Controller
 
     }
 
+    public function InstructorChangePassword(){
+
+        $id = Auth::user()->id;
+        $profileData = User::find($id);
+        return view('instructor.instructor_change_password',compact('profileData'));
+
+    }// End Method
+
+
+    public function InstructorPasswordUpdate(Request $request){
+
+        /// Validation 
+        $request->validate([
+            'old_password' => 'required',
+            'new_password' => 'required|confirmed'
+        ]);
+
+        if (!Hash::check($request->old_password, auth::user()->password)) {
+
+            $notification = array(
+                'message' => 'Senha antiga não confere!',
+                'alert-type' => 'error'
+            );
+            return back()->with($notification);
+        }
+
+        /// Update The new Password 
+        User::whereId(auth::user()->id)->update([
+            'password' => Hash::make($request->new_password)
+        ]);
+
+        $notification = array(
+            'message' => 'Senha Atualizada com Sucesso',
+            'alert-type' => 'success'
+        );
+        return back()->with($notification); 
+
+    }// End Method
+
 }
