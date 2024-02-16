@@ -592,6 +592,9 @@
                             <p class="user-name mb-0">{{$profileData->name}}</p>
                             
                         </div>
+                        <form id="logout-form" action="{{ route('admin.profile.logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item d-flex align-items-center" href="{{route('admin.profile')}}"><i class="bx bx-user fs-5"></i><span>Profile</span></a>
@@ -607,7 +610,10 @@
                         <li>
                             <div class="dropdown-divider mb-0"></div>
                         </li>
-                        <li><a class="dropdown-item d-flex align-items-center" href="{{route('admin.logout')}}"><i class="bx bx-log-out-circle"></i><span>Logout</span></a>
+                        <li><a class="dropdown-item d-flex align-items-center" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            <i class="bx bx-log-out-circle"></i>
+                            <span>Logout</span>
+                        </a></a>
                         </li>
                     </ul>
                 </div>
