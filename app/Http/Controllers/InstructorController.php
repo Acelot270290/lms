@@ -10,10 +10,8 @@ use Illuminate\Support\Facades\Hash;
 class InstructorController extends Controller
 {
     public function InstructorDashboard(){
-        $id = Auth::user()->id;
-        $profileData = User::find($id);
-        return view('instructor.index',compact('profileData'));
-    }  
+        return view('instructor.index');
+    } // End Mehtod 
 
     public function InstructorLogout(Request $request) {
         Auth::guard('web')->logout();
@@ -22,20 +20,26 @@ class InstructorController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/instructor/login');
-    } 
+        $notification = array(
+            'message' => 'Logout Successfully',
+            'alert-type' => 'info'
+        );
+
+        return redirect('/instructor/login')->with($notification);
+    } // End Method 
 
 
     public function InstructorLogin(){
         return view('instructor.instructor_login');
-    } 
+    } // End Method 
 
     public function InstructorProfile(){
 
         $id = Auth::user()->id;
         $profileData = User::find($id);
         return view('instructor.instructor_profile_view',compact('profileData'));
-    }
+    }// End Method
+
 
     public function InstructorProfileStore(Request $request){
 
@@ -45,7 +49,7 @@ class InstructorController extends Controller
         $data->username = $request->username;
         $data->email = $request->email;
         $data->phone = $request->phone;
-        $data->andress = $request->address;
+        $data->address = $request->address;
 
         if ($request->file('photo')) {
            $file = $request->file('photo');
@@ -62,8 +66,9 @@ class InstructorController extends Controller
             'alert-type' => 'success'
         );
         return redirect()->back()->with($notification);
-
-    }
+        
+    }// End Method
+    
 
     public function InstructorChangePassword(){
 
@@ -83,9 +88,9 @@ class InstructorController extends Controller
         ]);
 
         if (!Hash::check($request->old_password, auth::user()->password)) {
-
+            
             $notification = array(
-                'message' => 'Senha antiga não confere!',
+                'message' => 'Old Password Does not Match!',
                 'alert-type' => 'error'
             );
             return back()->with($notification);
@@ -97,11 +102,15 @@ class InstructorController extends Controller
         ]);
 
         $notification = array(
-            'message' => 'Senha Atualizada com Sucesso',
+            'message' => 'Password Change Successfully',
             'alert-type' => 'success'
         );
         return back()->with($notification); 
 
     }// End Method
 
+
+
+
 }
+ 

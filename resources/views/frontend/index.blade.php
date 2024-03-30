@@ -4,7 +4,7 @@
 <!--================================
          START HERO AREA
 =================================-->
-@include('frontend.home.hero-area')
+ @include('frontend.home.hero-area')
 <!--================================
         END HERO AREA
 =================================-->

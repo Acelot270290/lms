@@ -1,7 +1,7 @@
 <section class="hero-area">
     <div class="hero-slider owl-action-styled">
         <div class="hero-slider-item hero-bg-1">
-
+            
             <div class="container">
                 <div class="hero-content">
                     <div class="section-heading">

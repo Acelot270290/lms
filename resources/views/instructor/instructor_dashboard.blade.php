@@ -1,5 +1,3 @@
-<html>
-<title>Instructor Dashboard </title>
 <!doctype html>
 <html lang="en">
 
@@ -9,6 +7,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--favicon-->
 	<link rel="icon" href="{{ asset('backend/assets/images/favicon-32x32.png') }}" type="image/png"/>
+	
+	<meta name="csrf-token" content="{{ csrf_token() }}">
+
+
 	<!--plugins-->
 	<link href="{{ asset('backend/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css') }}" rel="stylesheet"/>
 	<link href="{{ asset('backend/assets/plugins/simplebar/css/simplebar.css') }}" rel="stylesheet" />
@@ -28,6 +30,11 @@
 	<link rel="stylesheet" href="{{ asset('backend/assets/css/semi-dark.css') }}"/>
 	<link rel="stylesheet" href="{{ asset('backend/assets/css/header-colors.css') }}"/>
 
+	<!-- Datatable -->
+	<link href="{{ asset('backend/assets/plugins/datatable/css/dataTables.bootstrap5.min.css') }}" rel="stylesheet" />
+	<!-- End Datatable -->
+
+
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
 
 
@@ -35,7 +42,6 @@
 </head>
 
 <body>
-    <h1>Instructor Dashboard </h1>
 	<!--wrapper-->
 	<div class="wrapper">
 		<!--sidebar wrapper -->
@@ -59,7 +65,7 @@
 	</div>
 	<!--end wrapper-->
 
-
+ 
 	<!--end switcher-->
 	<!-- Bootstrap JS -->
 	<script src="{{ asset('backend/assets/js/bootstrap.bundle.min.js') }}"></script>
@@ -72,8 +78,22 @@
     <script src="{{ asset('backend/assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
 	<script src="{{ asset('backend/assets/plugins/chartjs/js/chart.js') }}"></script>
 	<script src="{{ asset('backend/assets/js/index.js') }}"></script>
+
+	<script>
+		new PerfectScrollbar('.chat-list');
+		new PerfectScrollbar('.chat-content');
+	</script>
+
+	
 	<!--app JS-->
 	<script src="{{ asset('backend/assets/js/app.js') }}"></script>
+
+	<script src="{{ asset('backend/assets/js/validate.min.js') }}"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+	<script src="{{ asset('backend/assets/js/code.js') }}"></script>
+
+	
 	<script>
 		new PerfectScrollbar(".app-container")
 	</script>
@@ -87,12 +107,15 @@
     case 'info':
     toastr.info(" {{ Session::get('message') }} ");
     break;
+
     case 'success':
     toastr.success(" {{ Session::get('message') }} ");
     break;
+
     case 'warning':
     toastr.warning(" {{ Session::get('message') }} ");
     break;
+
     case 'error':
     toastr.error(" {{ Session::get('message') }} ");
     break; 
@@ -101,6 +124,26 @@
 </script>
 
 
+<!--Datatable-->
+<script src="{{ asset('backend/assets/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
+	<script src="{{ asset('backend/assets/plugins/datatable/js/dataTables.bootstrap5.min.js') }}"></script>
+	<script>
+		$(document).ready(function() {
+			$('#example').DataTable();
+		  } );
+	</script>
+	<!--End Datatable-->
+
+	<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+	<script>
+	   tinymce.init({
+		 selector: 'textarea#myeditorinstance', // Replace this CSS selector to match the placeholder element for TinyMCE
+		 plugins: 'powerpaste advcode table lists checklist',
+		 toolbar: 'undo redo | blocks| bold italic | bullist numlist checklist | code | table'
+	   });
+	</script>
+
+	
 </body>
 
 </html>
