@@ -10,8 +10,8 @@
             <div class="col-lg-5">
                 <div class="section-heading py-4">
                     <h5 class="ribbon ribbon-lg mb-2">Newsletter</h5>
-                    <h2 class="section__title mb-1">Subscribe to newsletter</h2>
-                    <p class="section__desc">Stay in the know on new free e-book</p>
+                    <h2 class="section__title mb-1">Fique por dentro das novidades</h2>
+                    <p class="section__desc">Receba as notificações de novos conteúdos</p>
                 </div><!-- end section-heading -->
             </div><!-- end col-lg-5 -->
             <div class="col-lg-5 ml-auto">
@@ -19,11 +19,11 @@
                     <div class="input-group">
                         <input type="email" name="email" class="form-control form--control pl-3" placeholder="Enter email address">
                         <div class="input-group-append">
-                            <button class="btn theme-btn" type="button">Subscribe <i class="la la-arrow-right icon ml-1"></i></button>
+                            <button class="btn theme-btn" type="button">Inscreva-se <i class="la la-arrow-right icon ml-1"></i></button>
                         </div>
                     </div>
                     <p class="fs-14 mt-1">
-                        <i class="la la-lock mr-1"></i>Your information is safe with us! unsubscribe anytime.
+                        <i class="la la-lock mr-1"></i>Sua informação está segura conosco! cancele a inscrição a qualquer momento.
                     </p>
                 </form>
             </div><!-- end col-lg-6 -->
