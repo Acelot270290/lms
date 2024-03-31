@@ -67,23 +67,8 @@
 
 <div class="section-block"></div>
 
-<!--======================================
-        START ABOUT AREA
-======================================-->
-@include('frontend.home.about-area')
-<!--======================================
-        END ABOUT AREA
-======================================-->
 
 <div class="section-block"></div>
-
-<!--======================================
-        START REGISTER AREA
-======================================-->
-@include('frontend.home.register-area')
-<!--======================================
-        END REGISTER AREA
-======================================-->
 
 <div class="section-block"></div>
 
