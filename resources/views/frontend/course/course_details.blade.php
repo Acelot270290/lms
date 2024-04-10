@@ -177,7 +177,7 @@
                            <h3 class="fs-24 font-weight-semi-bold">Course content</h3>
                            <div class="curriculum-duration fs-15">
                                <span class="curriculum-total__text mr-2"><strong class="text-black font-weight-semi-bold">Total:</strong> {{ count($lecture) }} lectures</span>
-                               <span class="curriculum-total__hours"><strong class="text-black font-weight-semi-bold">Total hours:</strong> {{ $course->duration }}</span>
+                               <span class="curriculum-total__hours"><strong class="text-black font-weight-semi-bold">Total horas:</strong> {{ $course->duration }}</span>
                            </div>
                        </div>
 

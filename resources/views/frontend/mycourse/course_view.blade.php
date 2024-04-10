@@ -325,7 +325,7 @@ START COURSE-DASHBOARD
                 <div class="lecture-overview-stats-item">
                     <ul class="generic-list-item">
         <li><span>Resourse:</span>{{ $course->course->resources }}</li>
-        <li><span>Video length:</span>{{ $course->course->duration }} total hours</li>
+        <li><span>Video length:</span>{{ $course->course->duration }} Total horas</li>
         <li><span>Certificate:</span>{{ $course->course->certificate }}</li>
                     </ul>
                 </div><!-- end lecture-overview-stats-item -->
