@@ -404,7 +404,7 @@
                     <p class="text-success fs-14 font-weight-medium">Updated<span class="font-weight-bold pl-1">{{ $item->created_at->format('M d Y') }}</span></p>
                 </div>
                 <ul class="generic-list-item generic-list-item-bullet generic-list-item--bullet d-flex align-items-center fs-14">
-                    <li>{{ $item->duration }} total hours</li>
+                    <li>{{ $item->duration }} Total horas</li>
                     <li>{{ $item->label }}</li>
                 </ul>
                 <p class="card-text pt-1 fs-14 lh-22">{{ $item->prerequisites }}</p>

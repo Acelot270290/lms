@@ -48,7 +48,7 @@
                                         class="la la-sign-in mr-1"></i><a href="{{ route('dashboard') }}"> Dashboard</a>
                                 </li>
                                 <li class="d-flex align-items-center"><i class="la la-user mr-1"></i><a
-                                        href="{{ route('user.logout') }}"> Logout</a></li>
+                                        href="{{ route('user.logout') }}"> sair</a></li>
                             @else
                                 <li class="d-flex align-items-center pr-3 mr-3 border-right border-right-gray"><i
                                         class="la la-sign-in mr-1"></i><a href="{{ route('login') }}"> Login</a></li>
@@ -112,7 +112,8 @@
                                                     )->get();
                                                 @endphp
                                                 <li>
-                                                    <a href="{{ url('category/' . $cat->id . '/' . $cat->category_slug) }}">{{ $cat->category_name }}<i
+                                                    <a
+                                                        href="{{ url('category/' . $cat->id . '/' . $cat->category_slug) }}">{{ $cat->category_name }}<i
                                                             class="la la-angle-right"></i></a>
                                                     <ul class="sub-menu">
                                                         @foreach ($subcategories as $subcat)
@@ -172,10 +173,17 @@
                                     </li>
                                 </ul>
                             </div><!-- end shop-cart -->
-                            <div class="nav-right-button">
-                                <a href="{{ route('login') }}" class="btn theme-btn d-none d-lg-inline-block"><i
-                                        class="la la-user-plus mr-1"></i> Login</a>
-                            </div><!-- end nav-right-button -->
+                            @auth
+                                <div class="nav-right-button">
+                                    <a href="{{ route('dashboard') }}" class="btn theme-btn d-none d-lg-inline-block"><i
+                                            class="la la-user-plus mr-1"></i> Dashboard</a>
+                                </div><!-- end nav-right-button -->
+                            @else
+                                <div class="nav-right-button">
+                                    <a href="{{ route('login') }}" class="btn theme-btn d-none d-lg-inline-block"><i
+                                            class="la la-user-plus mr-1"></i> Login</a>
+                                </div><!-- end nav-right-button -->
+                            @endauth
                         </div><!-- end menu-wrapper -->
                     </div><!-- end col-lg-10 -->
                 </div><!-- end row -->
