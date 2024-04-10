@@ -192,7 +192,7 @@
               
         @empty
 
-        <h5 class="text-danger"> Em Breve nvos Cursos </h5>
+        <h5 class="text-danger"> Em Breve novos Cursos </h5>
               
         @endforelse
 
