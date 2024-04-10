@@ -192,7 +192,7 @@
               
         @empty
 
-        <h5 class="text-danger"> No Course Found </h5>
+        <h5 class="text-danger"> Em Breve nvos Cursos </h5>
               
         @endforelse
 
