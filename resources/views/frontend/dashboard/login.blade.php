@@ -45,9 +45,7 @@
      
         <form method="POST" class="pt-4" action="{{ route('login') }}">
             @csrf
-        <div class="text-center pt-3 pb-4">
-            <div class="icon-element icon-element-md fs-25 shadow-sm">Or</div>
-        </div>
+        
         <div class="input-box">
             <label class="label-text">Email</label>
             <div class="form-group">
