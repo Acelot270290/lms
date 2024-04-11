@@ -39,31 +39,24 @@
             <div class="col-lg-7 mx-auto">
                 <div class="card card-item">
                     <div class="card-body">
-                        <h3 class="card-title text-center fs-24 lh-35 pb-4">Login to Your Account!</h3>
+                        <h3 class="card-title text-center fs-24 lh-35 pb-4">Faça Login!</h3>
                         <div class="section-block"></div>
                        
      
         <form method="POST" class="pt-4" action="{{ route('login') }}">
             @csrf
-
-
-        <div class="d-flex flex-wrap align-items-center pb-4">
-            <button class="btn theme-btn flex-grow-1 mx-2 mb-2"><i class="la la-google mr-2"></i>Google</button>
-            <button class="btn theme-btn flex-grow-1 mx-2 mb-2"><i class="la la-facebook mr-2"></i>Facebook</button>
-            <button class="btn theme-btn flex-grow-1 mx-2 mb-2"><i class="la la-twitter mr-2"></i>Twitter</button>
-        </div>
         <div class="text-center pt-3 pb-4">
             <div class="icon-element icon-element-md fs-25 shadow-sm">Or</div>
         </div>
         <div class="input-box">
-            <label class="label-text">Email or Username</label>
+            <label class="label-text">Email</label>
             <div class="form-group">
                 <input class="form-control form--control" id="email" type="email" name="email" placeholder="Email or Username">
                 <span class="la la-user input-icon"></span>
             </div>
         </div><!-- end input-box -->
         <div class="input-box">
-            <label class="label-text">Password</label>
+            <label class="label-text">Senha</label>
             <div class="input-group mb-3">
                 <span class="la la-lock input-icon"></span>
                 <input class="form-control form--control password-field" type="password" id="password" name="password" placeholder="Password">
@@ -78,13 +71,13 @@
         <div class="btn-box">
             <div class="d-flex align-items-center justify-content-between pb-4">
                 <div class="custom-control custom-checkbox fs-15">
-                    <input type="checkbox" class="custom-control-input" id="rememberMeCheckbox" required>
+                    <input type="checkbox" class="custom-control-input" id="rememberMeCheckbox">
                     <label class="custom-control-label custom--control-label" for="rememberMeCheckbox">Remember Me</label>
                 </div><!-- end custom-control -->
-                <a href="recover.html" class="btn-text">Forgot my password?</a>
+                <a href="recover.html" class="btn-text">Perdeu a Senha??</a>
             </div>
-            <button class="btn theme-btn" type="submit">Login Account <i class="la la-arrow-right icon ml-1"></i></button>
-            <p class="fs-14 pt-2">Don't have an account? <a href="sign-up.html" class="text-color hover-underline">Register</a></p>
+            <button class="btn theme-btn" type="submit">Login <i class="la la-arrow-right icon ml-1"></i></button>
+            <p class="fs-14 pt-2">Ainda sem uma conta? <a href="sign-up.html" class="text-color hover-underline">Register</a></p>
         </div><!-- end btn-box -->
     </form>
                     </div><!-- end card-body -->
