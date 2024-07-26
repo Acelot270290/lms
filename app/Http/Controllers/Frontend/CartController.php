@@ -358,7 +358,7 @@ class CartController extends Controller
                 'email' => $sendmail->email,
            ];
 
-           Mail::to($request->email)->send(new Orderconfirm($data)); 
+          // Mail::to($request->email)->send(new Orderconfirm($data)); 
            /// End Send email to student /// 
  
            /// Send Notification 

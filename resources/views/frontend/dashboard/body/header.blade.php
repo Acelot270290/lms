@@ -148,7 +148,7 @@
     </div>
                     </li>
 
-                    <li>
+                    {{--}}<li>
                         <div class="theme-picker d-flex align-items-center justify-content-center lh-40">
                             <button class="theme-picker-btn dark-mode-btn w-100 font-weight-semi-bold justify-content-center" title="Dark mode">
                                 <svg class="mr-1" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -171,7 +171,7 @@
                                 Light Mode
                             </button>
                         </div>
-                    </li>
+                    </li>{{--}}
                     <li>
                         <ul class="generic-list-item">
                              
@@ -260,7 +260,7 @@
             <li><a href="invite.html">Invite friends</a></li>
             <li><a href="contact.html">Help</a></li>
         </ul>
-        <div class="theme-picker d-flex align-items-center justify-content-center mt-4 px-3">
+        {{--}}<div class="theme-picker d-flex align-items-center justify-content-center mt-4 px-3">
             <button class="theme-picker-btn dark-mode-btn btn theme-btn-sm theme-btn-white w-100 font-weight-semi-bold justify-content-center" title="Dark mode">
                 <svg class="mr-1" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
@@ -281,7 +281,7 @@
                 </svg>
                 Light Mode
             </button>
-        </div>
+        </div>{{--}}
     </div><!-- end off-canvas-menu -->
     <div class="off-canvas-menu custom-scrollbar-styled category-off-canvas-menu">
         <div class="off-canvas-menu-close cat-menu-close icon-element icon-element-sm shadow-sm" data-toggle="tooltip" data-placement="left" title="Close menu">
