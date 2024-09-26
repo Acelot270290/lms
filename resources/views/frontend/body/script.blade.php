@@ -85,8 +85,8 @@
                     <div class="d-flex justify-content-between align-items-center">
                         
                         ${value.course.discount_price == null 
-                        ?`<p class="card-price text-black font-weight-bold">$${value.course.selling_price}</p>`
-                        :`<p class="card-price text-black font-weight-bold">$${value.course.discount_price} <span class="before-price font-weight-medium">$${value.course.selling_price}</span></p>`
+                        ?`<p class="card-price text-black font-weight-bold">R$${value.course.selling_price}</p>`
+                        :`<p class="card-price text-black font-weight-bold">R$${value.course.discount_price} <span class="before-price font-weight-medium">$${value.course.selling_price}</span></p>`
                         } 
                        
                         <div class="icon-element icon-element-sm shadow-sm cursor-pointer" data-toggle="tooltip" data-placement="top" title="Remove from Wishlist" id="${value.id}" onclick="wishlistRemove(this.id)" ><i class="la la-heart"></i></div>

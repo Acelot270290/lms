@@ -737,9 +737,9 @@
                         <div class="d-flex justify-content-between align-items-center">
 
                     @if ($inscourse->discount_price == NULL)
-                    <p class="card-price text-black font-weight-bold">${{ $inscourse->selling_price }}  </p>
+                    <p class="card-price text-black font-weight-bold">R${{ $inscourse->selling_price }}  </p>
                     @else
-                    <p class="card-price text-black font-weight-bold">${{ $inscourse->discount_price }} <span class="before-price font-weight-medium">${{ $inscourse->selling_price }}</span></p> 
+                    <p class="card-price text-black font-weight-bold">R${{ $inscourse->discount_price }} <span class="before-price font-weight-medium">R${{ $inscourse->selling_price }}</span></p> 
                     @endif
 
 

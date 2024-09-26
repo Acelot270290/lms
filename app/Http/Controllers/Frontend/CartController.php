@@ -378,26 +378,27 @@ class CartController extends Controller
     }// End Method 
 
 
-    public function StripeOrder(Request $request){
+    public function StripeOrder(Request $request) {
         if (Session::has('coupon')) {
             $total_amount = Session::get('coupon')['total_amount'];
-         }else {
-             $total_amount = round(Cart::total());
-         }
-
-         \Stripe\Stripe::setApiKey('sk_test_51IUTWzALc6pn5BvMjaRW9STAvY4pLiq1dNViHoh5KtqJc9Bx7d4WKlCcEdHOJdg3gCcC2F19cDxUmCBJekGSZXte00RN2Fc4vm');
-
-         $token = $_POST['stripeToken'];
-
-         $charge = \Stripe\Charge::create([
-            'amount' => $total_amount*100, 
+        } else {
+            $total_amount = round(Cart::total());
+        }
+    
+        // Usando a chave do Stripe a partir do arquivo de configuração
+        \Stripe\Stripe::setApiKey(config('services.stripe.secret'));
+    
+        $token = $request->input('stripeToken');
+    
+        $charge = \Stripe\Charge::create([
+            'amount' => $total_amount * 100, 
             'currency' => 'usd',
             'description' => 'Lms',
             'source' => $token,
             'metadata' => ['order_id' => '3434'],
-         ]); 
-
-         $order_id = Payment::insertGetId([
+        ]); 
+    
+        $order_id = Payment::insertGetId([
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
@@ -410,11 +411,10 @@ class CartController extends Controller
             'order_year' => Carbon::now()->format('Y'),
             'status' => 'pending',
             'created_at' => Carbon::now(), 
-
-         ]);
-
-         $carts = Cart::content();
-         foreach ($carts as $cart) {
+        ]);
+    
+        $carts = Cart::content();
+        foreach ($carts as $cart) {
             Order::insert([
                 'payment_id' => $order_id,
                 'user_id' => Auth::user()->id,
@@ -423,20 +423,22 @@ class CartController extends Controller
                 'course_title' => $cart->options->name,
                 'price' => $cart->price,
             ]);
-         }// end foreach 
-
-         if (Session::has('coupon')) {
+        }
+    
+        if (Session::has('coupon')) {
             Session::forget('coupon');
-         }
-         Cart::destroy();
-
-         $notification = array(
+        }
+    
+        Cart::destroy();
+    
+        $notification = array(
             'message' => 'Stripe Payment Submit Successfully',
             'alert-type' => 'success'
         );
-        return redirect()->route('index')->with($notification); 
-
-    }// End Method 
+        
+        return redirect()->route('index')->with($notification);
+    }
+    
 
 
 

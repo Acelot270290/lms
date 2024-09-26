@@ -35,19 +35,19 @@
                 <ul class="card-duration d-flex align-items-center fs-15 pb-2">
                     <li class="mr-2">
                         <span class="text-black">Status:</span>
-                        <span class="badge badge-success text-white">Published</span>
+                        <span class="badge badge-success text-white">Publicado</span>
                     </li>
                     <li class="mr-2">
-                        <span class="text-black">Duration:</span>
-                        <span>{{ $item->course->duration }} hours </span>
+                        <span class="text-black">Duração:</span>
+                        <span>{{ $item->course->duration }} Horas </span>
                     </li>
                     <li class="mr-2">
-                        <span class="text-black">Students:</span>
+                        <span class="text-black">Estudantes:</span>
                         <span>30,405</span>
                     </li>
                 </ul>
                 <div class="d-flex justify-content-between align-items-center">
-                    <p class="card-price text-black font-weight-bold">${{ $item->course->selling_price }}</p>
+                    <p class="card-price text-black font-weight-bold">R${{ $item->course->selling_price }}</p>
                     <div class="card-action-wrap pl-3">
                         <a href="course-details.html" class="icon-element icon-element-sm shadow-sm cursor-pointer ml-1 text-success" data-toggle="tooltip" data-placement="top" data-title="View"><i class="la la-eye"></i></a>
                         <div class="icon-element icon-element-sm shadow-sm cursor-pointer ml-1 text-secondary" data-toggle="tooltip" data-placement="top" data-title="Edit"><i class="la la-edit"></i></div>
