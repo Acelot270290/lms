@@ -392,8 +392,8 @@ class CartController extends Controller
     
         $charge = \Stripe\Charge::create([
             'amount' => $total_amount * 100, 
-            'currency' => 'usd',
-            'description' => 'Lms',
+            'currency' => 'brl',
+            'description' => 'Pgamento Musika em Casa',
             'source' => $token,
             'metadata' => ['order_id' => '3434'],
         ]); 
