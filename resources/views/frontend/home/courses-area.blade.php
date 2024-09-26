@@ -6,8 +6,8 @@
 <section class="course-area pb-120px">
     <div class="container">
         <div class="section-heading text-center">
-            <h5 class="ribbon ribbon-lg mb-2">Choose your desired courses</h5>
-            <h2 class="section__title">The world's largest selection of courses</h2>
+            <h5 class="ribbon ribbon-lg mb-2">Escolha o curso desejado</h5>
+            <h2 class="section__title">Aproveite todas as novidades</h2>
             <span class="section-divider"></span>
         </div><!-- end section-heading -->
         

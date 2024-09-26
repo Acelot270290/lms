@@ -78,7 +78,7 @@
                                     </g>
                                     </svg>
                                 </div>
-                                <h4 class="fs-20 font-weight-semi-bold pt-3">Expert Teachers</h4>
+                                <h4 class="fs-20 font-weight-semi-bold pt-3">Professores Profissionais</h4>
                             </div><!-- end info-icon-box -->
                         </div><!-- end col-lg-4 -->
                     </div><!-- end row -->
