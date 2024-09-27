@@ -12,7 +12,7 @@
             <img class="rounded-full" src="{{ (!empty($profileData->photo)) ? url('upload/user_images/'.$profileData->photo) : url('upload/no_image.jpg')}}" alt="Student thumbnail image">
         </div>
         <div class="media-body">
-            <h2 class="section__title fs-30">Hello, {{ $profileData->name }}</h2>
+            <h2 class="section__title fs-30">Olá, {{ $profileData->name }}</h2>
             <div class="rating-wrap d-flex align-items-center pt-2">
                 <div class="review-stars">
                     <span class="rating-number">4.4</span>

@@ -29,7 +29,7 @@
                                 <div class="user-action-wrap d-flex align-items-center">
                                  
                                    
-    <div class="shop-cart wishlist-cart pr-3 mr-3 border-right border-right-gray">
+    {{--}}<div class="shop-cart wishlist-cart pr-3 mr-3 border-right border-right-gray">
         <ul>
             <li>
                 <p class="shop-cart-btn">
@@ -70,7 +70,7 @@
             </li>
         </ul>
     </div><!-- end shop-cart -->
-    <div class="shop-cart notification-cart pr-3 mr-3 border-right border-right-gray">
+  <div class="shop-cart notification-cart pr-3 mr-3 border-right border-right-gray">
         <ul>
             <li>
                 <p class="shop-cart-btn">
@@ -119,7 +119,7 @@
                 </ul>
             </li>
         </ul>
-    </div><!-- end shop-cart -->
+    </div><!-- end shop-cart -->{{--}}
 
 
     @php
@@ -175,48 +175,20 @@
                     <li>
                         <ul class="generic-list-item">
                              
+                            <li><div class="section-block"></div></li>
                             <li>
-                                <a href="dashboard-settings.html">
-                                    <i class="la la-gear mr-1"></i> Settings
-                                </a>
-                            </li>
-                            <li>
-                                <a href="dashboard-purchase-history.html">
-                                    <i class="la la-history mr-1"></i> Purchase history
+                                <a href="{{ route('user.profile') }}">
+                                    <i class="la la-user mr-1"></i> Perfil
                                 </a>
                             </li>
                             <li><div class="section-block"></div></li>
+                
                             <li>
-                                <a href="student-detail.html">
-                                    <i class="la la-user mr-1"></i> Public profile
-                                </a>
-                            </li>
-                            <li>
-                                <a href="dashboard-settings.html">
-                                    <i class="la la-edit mr-1"></i> Edit profile
+                                <a href="{{ route('user.logout') }}">
+                                    <i class="la la-power-off mr-1"></i> Sair
                                 </a>
                             </li>
                             <li><div class="section-block"></div></li>
-                            <li>
-                                <a href="#">
-                                    <i class="la la-question mr-1"></i> Help
-                                </a>
-                            </li>
-                            <li>
-                                <a href="index.html">
-                                    <i class="la la-power-off mr-1"></i> Logout
-                                </a>
-                            </li>
-                            <li><div class="section-block"></div></li>
-                            <li>
-                                <a href="#" class="position-relative">
-                                    <span class="fs-17 font-weight-semi-bold d-block">Aduca for Business</span>
-                                    <span class="lh-20 d-block fs-14 text-gray">Bring learning to your company</span>
-                                    <span class="position-absolute top-0 right-0 mt-3 mr-3 fs-18 text-gray">
-                                    <i class="la la-external-link"></i>
-                                </span>
-                                </a>
-                            </li>
                         </ul>
                     </li>
                 </ul>

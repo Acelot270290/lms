@@ -5,7 +5,7 @@
      
     <div class="section-block mb-5"></div>
     <div class="dashboard-heading mb-5">
-        <h3 class="fs-22 font-weight-semi-bold">My Courses</h3>
+        <h3 class="fs-22 font-weight-semi-bold">Meus Cursos</h3>
     </div>
     <div class="dashboard-cards mb-5">
        
